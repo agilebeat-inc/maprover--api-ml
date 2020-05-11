@@ -21,4 +21,5 @@ npm install @tensorflow/tfjs
     - run local test: ```sls invoke local -f infer```
 
 4. Sources:
-    - https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda
+    - [aws nodejs canva](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
+    - [node-canva] (https://github.com/Automattic/node-canvas)
