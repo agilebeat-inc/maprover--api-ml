@@ -19,3 +19,6 @@ npm install @tensorflow/tfjs
 
 3. Useful
     - run local test: ```sls invoke local -f infer```
+
+4. Sources:
+    - https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda
