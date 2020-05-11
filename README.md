@@ -16,3 +16,6 @@ serverless plugin install -n serverless-plugin-custom-roles
 ```
 npm install @tensorflow/tfjs
 ```
+
+3. Useful
+    - run local test: ```sls invoke local -f infer```
