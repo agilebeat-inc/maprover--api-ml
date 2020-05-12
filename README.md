@@ -25,6 +25,7 @@ npm install @tensorflow/tfjs
     - [node-canva](https://github.com/Automattic/node-canvas)
     - [problems with lambda so libs](https://github.com/Automattic/node-canvas/issues/680)
     - [build aws lambda issues](https://github.com/Automattic/node-canvas/issues/680)
+    - [load image example](https://medium.com/@nico.axtmann95/scalable-image-classification-with-onnx-js-and-aws-lambda-ab3d7bd1723)
 
 5. Lambda Tricks:
     - list files on the running machine
