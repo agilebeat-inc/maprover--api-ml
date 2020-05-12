@@ -1,6 +1,7 @@
 'use strict';
 
 const tf = require('@tensorflow/tfjs');
+const { createCanvas, loadImage } = require('canvas')
 
 module.exports.inferHandler = async (event) => {
         const MODEL_URL = 'https://maprover-models.s3.amazonaws.com/TensorFlow/model.json'

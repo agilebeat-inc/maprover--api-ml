@@ -50,6 +50,7 @@ provider:
 package:
  include:
    - models/**
+   - lib/**
    - node_modules/**
    - package-lock.json
 #  exclude:
@@ -91,6 +92,6 @@ custom:
   documentation:
     api:
       info:
-        version: "v0.0.1"
+        version: "v0.0.2"
         title: "Maprover API"
         description: "Maprover API - Deep learning for a map"
