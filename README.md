@@ -22,4 +22,5 @@ npm install @tensorflow/tfjs
 
 4. Sources:
     - [aws nodejs canva](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
-    - [node-canva] (https://github.com/Automattic/node-canvas)
+    - [node-canva](https://github.com/Automattic/node-canvas)
+    - [problems with lambda so libs](https://github.com/Automattic/node-canvas/issues/680)
