@@ -34,6 +34,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-
 RUN npm install -g serverless
 RUN npm install -g serverless-apigw-binary
 RUN npm install -g serverless-apigwy-binary
+RUN npm install -g npm@latest
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
