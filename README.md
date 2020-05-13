@@ -40,3 +40,6 @@ exports.handler = async (event, context) => {
   return fs.readdirSync("/usr/lib64").filter(p => p.match(/\.so/)).sort().join("\n");
 };
 ```
+
+
+
