@@ -53,6 +53,7 @@ package:
    - lib/**
    - node_modules/**
    - package-lock.json
+   - api-gateway-models/**
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
@@ -64,7 +65,7 @@ functions:
       - http:
           reqValidatorName: 'tileInputValidator'
           path: infer
-          method: get
+          method: post
           cors: true
           private: false
 #          request:
