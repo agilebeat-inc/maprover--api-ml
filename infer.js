@@ -1,34 +1,28 @@
 'use strict';
 
 const tf = require('@tensorflow/tfjs');
-const { createCanvas, loadImage } = require('canvas')
-
-'use strict';
-
-const tf = require('@tensorflow/tfjs');
-const {Canvas} = require('canvas')
+const { createCanvas, Image } = require('canvas')
 
 module.exports.inferHandler = async (event, context) => {
     function toBase64FromImageData(data) {
-
-        var canvas = new Canvas();
+        var canvas = createCanvas(256, 256);
         var context = canvas.getContext('2d');
         canvas.height = data.height;
         canvas.width = data.width;
       
-        context = canvas.getContext('2d');
+        var context = canvas.getContext('2d');
         context.putImageData(data, 0, 0);
       
-        base64Data = canvas.toDataURL()
+        var base64Data = canvas.toDataURL();
         return base64Data;
-      };
+    };
       
-      function toImageDataFromBase64(string) {
-        var image = new Canvas.Image();
-          image.src = string;
+    function toImageDataFromBase64(string) {
+        var image = new Image();
+        image.src = string;
       
-          var canvas = new Canvas();
-          var context = canvas.getContext('2d');
+        var canvas = createCanvas(256, 256);
+        var context = canvas.getContext('2d');
         var height = image.height;
         var width = image.width;
       
@@ -37,11 +31,12 @@ module.exports.inferHandler = async (event, context) => {
         context.clearRect(0, 0, width, height);
         context.drawImage(image, 0, 0);
       
-          return context.getImageData(0, 0, width, height);
-      };
+        return context.getImageData(0, 0, width, height);
+    };
 
-      var imageData = toImageDataFromBase64(JSON.stringify(event.tile_base64));
-      var imageB64 = toBase64FromImageData(imageData);
+    var tile_fullstr = "data:image/png;base64," + JSON.stringify(event.tile_base64);
+    var imageData = toImageDataFromBase64(tile_fullstr);
+    var imageB64 = toBase64FromImageData(imageData);
 
     const response = {
         statusCode: 200,
