@@ -30,6 +30,7 @@ npm install @tensorflow/tfjs
     - [aws lambda nodjes - no body returned](https://medium.com/lifeomic/a-two-week-search-for-the-missing-body-of-a-lambda-function-response-c9ee79bd8093)
     - [example of resnet50](https://medium.com/@nico.axtmann95/scalable-image-classification-with-onnx-js-and-aws-lambda-ab3d7bd1723)
     - [encoding and decoding b64 in Node.js](https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/)
+    - [convert model to tsjs](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
 
 5. Lambda Tricks:
     - list files on the running machine
