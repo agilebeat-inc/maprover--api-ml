@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     librsvg2-dev
 
 RUN pip --no-cache-dir install \
-    awscli boto3
+    awscli boto3 tensorflowjs
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
