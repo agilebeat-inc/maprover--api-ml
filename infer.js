@@ -47,7 +47,7 @@ module.exports.inferHandler = async (event, context) => {
         statusCode: 200,
         event : JSON.stringify(event.tile_base64),
         imageB64: imageB64,
-        body: JSON.stringify((await result.array())[0][0])
+        body: 'Sucess! We rule!'
     };
     return response;
 };
