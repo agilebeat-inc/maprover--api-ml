@@ -31,6 +31,7 @@ npm install @tensorflow/tfjs
     - [example of resnet50](https://medium.com/@nico.axtmann95/scalable-image-classification-with-onnx-js-and-aws-lambda-ab3d7bd1723)
     - [encoding and decoding b64 in Node.js](https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/)
     - [convert model to tsjs](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
+    - [save Keras model as tsjs model](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
 
 5. Lambda Tricks:
     - list files on the running machine
