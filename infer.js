@@ -4,10 +4,7 @@ const tf = require('@tensorflow/tfjs');
 const { createCanvas, Image } = require('canvas')
 
 module.exports.inferHandler = async (event, context) => {
-    //const modelURL = 'https://maprover-models.s3.amazonaws.com/TensorFlow/quarry/model04ad7614e0c24c0d8c7c34690867a6a973e2c224fdbf93a2e9d67e63a9bf5b73.json';
-    //const modelURL = 'http://huguesg.fr/incidents/model.json'
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/model.json'
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/model.json'
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/model.json'
 
     function toBase64FromImageData(data) {
         var canvas = createCanvas(256, 256);
@@ -39,17 +36,40 @@ module.exports.inferHandler = async (event, context) => {
         return context.getImageData(0, 0, width, height);
     };
 
+    function imageByteArray(image, numChannels) {
+        const pixels = image.data
+        const numPixels = image.width * image.height;
+        const values = new Float32Array(numPixels * numChannels);
+      
+        for (let i = 0; i < numPixels; i++) {
+          for (let channel = 0; channel < numChannels; ++channel) {
+            values[i * numChannels + channel] = 1/pixels[i * 4 + channel];
+          }
+        }
+      
+        return values
+    }
+
+    function imageToInput (image, numChannels) {
+        const values = imageByteArray(image, numChannels)
+        const outShape = [image.height, image.width, numChannels];
+        const input = tf.tensor3d(values, outShape, 'float32');
+        const batch_input = tf.expandDims(input, 0)
+      
+        return batch_input
+      }
+
+
     var tile_fullstr = "data:image/png;base64," + JSON.stringify(event.tile_base64);
     var imageData = toImageDataFromBase64(tile_fullstr);
+    var input = imageToInput(imageData, 4);
     const model = await tf.loadLayersModel(modelURL);
-    var prediction = model.predict(imageData);
-    //var imageB64 = toBase64FromImageData(imageData);
+    var prediction = model.predict(input);
 
     const response = {
         statusCode: 200,
-        event : JSON.stringify(event.tile_base64),
-        prediction: JSON.stringify(prediction),
-        body: 'Sucess! We rule!'
-    };
+        imageLength: JSON.stringify(prediction),
+        body: JSON.stringify(input)
+    }; 
     return response;
 };
