@@ -48,7 +48,7 @@ module.exports.inferHandler = async (event, context) => {
         }
       
         return values
-    }
+    };
 
     function imageToInput (image, numChannels) {
         const values = imageByteArray(image, numChannels)
@@ -57,7 +57,7 @@ module.exports.inferHandler = async (event, context) => {
         const batch_input = tf.expandDims(input, 0)
       
         return batch_input
-      }
+    };
 
 
     var tile_fullstr = "data:image/png;base64," + JSON.stringify(event.tile_base64);
@@ -65,11 +65,16 @@ module.exports.inferHandler = async (event, context) => {
     var input = imageToInput(imageData, 4);
     const model = await tf.loadLayersModel(modelURL);
     var prediction = model.predict(input);
-
+    var clsftion = prediction.dataSync();
+    var isFeature;
+    if (clsftion[0] > clsftion[1]) {
+        isFeature = false;
+    } else {
+        isFeature = true;
+    } 
     const response = {
         statusCode: 200,
-        imageLength: JSON.stringify(prediction),
-        body: JSON.stringify(input)
+        body: {railclass : isFeature}
     }; 
     return response;
 };
