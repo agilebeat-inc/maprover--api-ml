@@ -4,7 +4,7 @@ const tf = require('@tensorflow/tfjs');
 const { createCanvas, Image } = require('canvas')
 
 module.exports.inferHandler = async (event, context) => {
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/model.json'
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/model.json';
 
     function toBase64FromImageData(data) {
         var canvas = createCanvas(256, 256);
@@ -21,6 +21,7 @@ module.exports.inferHandler = async (event, context) => {
       
     function toImageDataFromBase64(string) {
         var image = new Image();
+        image.onload = function () {};
         image.src = string;
       
         var canvas = createCanvas(256, 256);
@@ -59,8 +60,8 @@ module.exports.inferHandler = async (event, context) => {
         return batch_input
     };
 
-
-    var tile_fullstr = "data:image/png;base64," + JSON.stringify(event.tile_base64);
+    var event_body = JSON.parse(event.body)
+    var tile_fullstr = "data:image/png;base64," + JSON.stringify(event_body.tile_base64);
     var imageData = toImageDataFromBase64(tile_fullstr);
     var input = imageToInput(imageData, 4);
     const model = await tf.loadLayersModel(modelURL);
@@ -71,7 +72,8 @@ module.exports.inferHandler = async (event, context) => {
         isFeature = false;
     } else {
         isFeature = true;
-    } 
+    }
+
     const response = {
         statusCode: 200,
         body: {railclass : isFeature}
