@@ -76,7 +76,8 @@ module.exports.inferHandler = async (event, context) => {
 
     const response = {
         statusCode: 200,
-        body: {railclass : isFeature}
+        headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+        body: JSON.stringify({railclass : isFeature})
     }; 
     return response;
 };
