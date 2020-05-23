@@ -1,5 +1,6 @@
 {
   "Test from command line instruction": "sls invoke -f infer -p test/tile_test.json",
+  "Pull logs from the command line": "sls logs -f infer",
   "resource": "/infer",
   "path": "/infer",
   "httpMethod": "POST",
