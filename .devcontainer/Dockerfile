@@ -26,8 +26,13 @@ RUN apt-get update && apt-get install -y \
     libgif-dev \
     librsvg2-dev
 
+
+RUN pip install numpy --upgrade
+RUN pip install pyinquirer --upgrade
+RUN pip --no-cache-dir install tensorflowjs
+
 RUN pip --no-cache-dir install \
-    awscli boto3 tensorflowjs
+    awscli boto3
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
@@ -39,22 +44,15 @@ RUN npm install -g npm@latest
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install TensorFlow CPU version
-ENV TENSORFLOW_VERSION 1.10.0
-RUN pip --no-cache-dir install \
-    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.10.0-cp36-cp36m-linux_x86_64.whl
-
-
 # Using Ubuntu
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -; apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -; apt-get install -y nodejs
 
 
 # Install Python library for Data Science
 RUN pip --no-cache-dir install \
-	 jupyter \
- 	 ipykernel \
-	 numpy==1.14.5 \
-         Pillow==6.0.0 \
+	jupyter \
+ 	ipykernel \
+    Pillow \
         && \
     python -m ipykernel.kernelspec
 
