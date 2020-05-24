@@ -17,6 +17,9 @@ serverless plugin install -n serverless-plugin-custom-roles
 npm install @tensorflow/tfjs
 ```
 
+4. Set up aws credentials
+    - run command: ```aws configure```
+
 3. Useful serverless comands in the project 
     - deploy project to the aws: ```sls deploy -v```
     - run local test: ```sls invoke local -f infer```
