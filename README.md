@@ -17,8 +17,11 @@ serverless plugin install -n serverless-plugin-custom-roles
 npm install @tensorflow/tfjs
 ```
 
-3. Useful
+3. Useful serverless comands in the project 
+    - deploy project to the aws: ```sls deploy -v```
     - run local test: ```sls invoke local -f infer```
+    - run test with post file ```sls invoke -f infer -p test/tile_test.json```
+    - pull out logs for the lambda function ```sls logs -f infer```
 
 4. Sources:
     - [aws nodejs canva](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
