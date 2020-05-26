@@ -44,10 +44,12 @@ module.exports.inferHandler = async (event, context) => {
       
         for (let i = 0; i < numPixels; i++) {
           for (let channel = 0; channel < numChannels; ++channel) {
-            values[i * numChannels + channel] = 1/pixels[i * 4 + channel];
+            values[i * numChannels + channel] = pixels[i * 4 + channel]/255;
           }
         }
       
+        console.log(values);
+
         return values
     };
 
@@ -68,7 +70,8 @@ module.exports.inferHandler = async (event, context) => {
     var prediction = model.predict(input);
     var clsftion = prediction.dataSync();
     var isFeature;
-    if (clsftion[0] > clsftion[1]) {
+    console.log(clsftion);
+    if (clsftion[0] < clsftion[1]) { 
         isFeature = false;
     } else {
         isFeature = true;
