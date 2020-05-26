@@ -68,7 +68,7 @@ module.exports.inferHandler = async (event, context) => {
     var prediction = model.predict(input);
     var clsftion = prediction.dataSync();
     var isFeature;
-    if (clsftion[0] < clsftion[1]) {
+    if (clsftion[0] > clsftion[1]) {
         isFeature = false;
     } else {
         isFeature = true;
