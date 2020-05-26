@@ -68,9 +68,15 @@ functions:
           method: post
           cors: true
           private: false
-#          request:
-#            schema:
-#              "application/json": ${file(api-gateway-models/input.json)
+          documentation:
+            summary: "Classify a map tile"
+            description: "Classifies the tile and returns true if tile belongs to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
+
 
 # you can add CloudFormation resource templates here
 resources:
@@ -96,3 +102,9 @@ custom:
         version: "v0.0.2"
         title: "Maprover API"
         description: "Maprover API - Deep learning for a map"
+    models:
+      - 
+        name: 'TileRequest'
+        description: 'Model for validation of the tile request'
+        contentType: "application/json"
+        schema: ${file(api-gateway-models/tile_input.json)}
