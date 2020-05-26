@@ -70,7 +70,7 @@ module.exports.inferHandler = async (event, context) => {
     var prediction = model.predict(input);
     var clsftion = prediction.dataSync();
     var isFeature;
-    console.log(clsftion);
+
     if (clsftion[0] < clsftion[1]) { 
         isFeature = false;
     } else {
