@@ -4,7 +4,15 @@ const tf = require('@tensorflow/tfjs');
 const { createCanvas, Image } = require('canvas')
 
 module.exports.inferHandler = async (event, context) => {
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-motorway/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-trunk/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-primary/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-secondary/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/aeroway-helipad/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-hospital/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-police/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-firestation/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/landuse-quarry/model.json';
 
     function toBase64FromImageData(data) {
         var canvas = createCanvas(256, 256);
