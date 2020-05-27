@@ -29,15 +29,15 @@ npm install @tensorflow/tfjs
     - you should see list of endpoints: 
     ```
     endpoints:
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-trunk
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-secondary
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/aeroway-helipad
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-hospital
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
-    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-trunk
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-secondary
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/aeroway-helipad
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-hospital
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+    POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
     ```
 
 3. Useful serverless comands in the project 
