@@ -76,13 +76,12 @@ functions:
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"
-
-  infer-trunk:
+  highway-trunk:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/trunk
+          path: infer/highway-trunk
           method: post
           cors: true
           private: false
@@ -94,13 +93,12 @@ functions:
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"     
-
-  infer-primary:
+  highway-primary:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/primary
+          path: infer/highway-primary
           method: post
           cors: true
           private: false
@@ -112,13 +110,12 @@ functions:
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"   
-
-  infer-secondary:
+  highway-secondary:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/secondary
+          path: infer/highway-secondary
           method: post
           cors: true
           private: false
@@ -129,14 +126,13 @@ functions:
               - "Data Creation"
               - "Some other tag"
             requestModels:
-              "application/json": "TileRequest"    
-
-  infer-helipad:
+              "application/json": "TileRequest"
+  aeroway-helipad:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/helipad
+          path: infer/aeroway-helipad
           method: post
           cors: true
           private: false
@@ -147,14 +143,13 @@ functions:
               - "Data Creation"
               - "Some other tag"
             requestModels:
-              "application/json": "TileRequest"   
-
-  infer-hospital:
+              "application/json": "TileRequest"
+  amenity-hospital:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/hospital
+          path: infer/amenity-hospital
           method: post
           cors: true
           private: false
@@ -165,14 +160,13 @@ functions:
               - "Data Creation"
               - "Some other tag"
             requestModels:
-              "application/json": "TileRequest" 
-
-  infer-police:
+              "application/json": "TileRequest"
+  amenity-police:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/police
+          path: infer/amenity-police
           method: post
           cors: true
           private: false
@@ -184,13 +178,12 @@ functions:
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"
-
-  infer-firestation:
+  amenity-firestation:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/firestation
+          path: infer/amenity-firestation
           method: post
           cors: true
           private: false
@@ -201,14 +194,13 @@ functions:
               - "Data Creation"
               - "Some other tag"
             requestModels:
-              "application/json": "TileRequest"   
-
-  infer-quarry:
+              "application/json": "TileRequest"
+  landuse-quarry:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/quarry
+          path: infer/landuse-quarry
           method: post
           cors: true
           private: false
