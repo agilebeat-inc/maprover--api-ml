@@ -4,15 +4,15 @@ const tf = require('@tensorflow/tfjs');
 const { createCanvas, Image } = require('canvas')
 
 module.exports.inferHandler = async (event, context) => {
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-motorway/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-trunk/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-primary/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-secondary/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/aeroway-helipad/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-hospital/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-police/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-firestation/model.json';
-    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/landuse-quarry/model.json';
+    const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-trunk/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-primary/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-secondary/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/aeroway-helipad/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-hospital/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-police/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-firestation/model.json';
+    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/landuse-quarry/model.json';
 
     function toBase64FromImageData(data) {
         var canvas = createCanvas(256, 256);
@@ -70,11 +70,18 @@ module.exports.inferHandler = async (event, context) => {
         return batch_input
     };
 
+    function extractModel(event) {
+        var urlPath = event.path;
+        var model_name = urlPath.split("/")[2];
+        return model_name;
+    }
+
     var event_body = JSON.parse(event.body)
     var tile_fullstr = "data:image/png;base64," + JSON.stringify(event_body.tile_base64);
     var imageData = toImageDataFromBase64(tile_fullstr);
     var input = imageToInput(imageData, 4);
-    const model = await tf.loadLayersModel(modelURL);
+    var model_name = extractModel(event);
+    const model = await tf.loadLayersModel(modelURL + model_name + '/model.json');
     var prediction = model.predict(input);
     var clsftion = prediction.dataSync();
     var isFeature;
@@ -85,10 +92,13 @@ module.exports.inferHandler = async (event, context) => {
         isFeature = true;
     }
 
+    var the_body = {};
+    the_body[model_name] = isFeature;
+
     const response = {
         statusCode: 200,
         headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-        body: JSON.stringify({motorway : isFeature})
+        body: JSON.stringify(the_body)
     }; 
     return response;
 };

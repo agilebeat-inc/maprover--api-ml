@@ -59,12 +59,12 @@ package:
 #    - exclude-me-dir/**
 
 functions:
-  infer-motorway:
+  highway-motorway:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer/motorway
+          path: infer/highway-motorway
           method: post
           cors: true
           private: false
