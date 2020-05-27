@@ -59,23 +59,167 @@ package:
 #    - exclude-me-dir/**
 
 functions:
-  infer:
+  infer-motorway:
     handler: infer.inferHandler
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
-          path: infer
+          path: infer/motorway
           method: post
           cors: true
           private: false
           documentation:
-            summary: "Classify a map tile"
-            description: "Classifies the tile and returns true if tile belongs to a class or false if it does not."
+            summary: "Classify a map tile that includes a map feature - motorway"
+            description: "Classifies the tile and returns true if tile contains 'motorway' feature to a class or false if it does not."
             tags:
               - "Data Creation"
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"
+
+  infer-trunk:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/trunk
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - trunk"
+            description: "Classifies the tile and returns true if tile contains 'trunk' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"     
+
+  infer-primary:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/primary
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - primary"
+            description: "Classifies the tile and returns true if tile contains 'primary' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"   
+
+  infer-secondary:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/secondary
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - secondary"
+            description: "Classifies the tile and returns true if tile contains 'secondary' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"    
+
+  infer-helipad:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/helipad
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - helipad"
+            description: "Classifies the tile and returns true if tile contains 'helipad' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"   
+
+  infer-hospital:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/hospital
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - hospital"
+            description: "Classifies the tile and returns true if tile contains 'hospital' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest" 
+
+  infer-police:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/police
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - police"
+            description: "Classifies the tile and returns true if tile contains 'police' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
+
+  infer-firestation:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/firestation
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - firestation"
+            description: "Classifies the tile and returns true if tile contains 'firestation' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"   
+
+  infer-quarry:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/quarry
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - quarry"
+            description: "Classifies the tile and returns true if tile contains 'quarry' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"     
 
 
 # you can add CloudFormation resource templates here
