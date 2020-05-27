@@ -20,6 +20,26 @@ npm install @tensorflow/tfjs
 4. Set up aws credentials
     - run command: ```aws configure```
 
+5. Check your aws configuration by: 
+    - listing s3 buckets: ```aws s3 ls```
+    - you should see a list of all your buckets
+
+6. Run:
+    - serverless deploy command: ```sls deploy -v```
+    - you should see list of endpoints: 
+    ```
+    endpoints:
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-trunk
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/highway-secondary
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/aeroway-helipad
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-hospital
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+    POST - https://uo28kvzjha.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+    ```
+
 3. Useful serverless comands in the project 
     - deploy project to the aws: ```sls deploy -v```
     - run local test: ```sls invoke local -f infer```
