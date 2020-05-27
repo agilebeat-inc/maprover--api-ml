@@ -3,17 +3,26 @@
 const tf = require('@tensorflow/tfjs');
 const { createCanvas, Image } = require('canvas')
 
-module.exports.inferHandler = async (event, context) => {
+const modelLoader = (function () {
     const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-trunk/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-primary/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/highway-secondary/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/aeroway-helipad/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-hospital/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-police/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/amenity-firestation/model.json';
-    //const modelURL = 'https://tfjs-model-tutorial.s3.amazonaws.com/tfjs-models/landuse-quarry/model.json';
+    var models = {};
 
+    async function createModel(model_name) {
+        var model = await tf.loadLayersModel(modelURL + model_name + '/model.json');
+        return model;
+    };
+
+    return {
+        getModel: async function (model_name) {
+            if (!(model_name in models)) {
+                models[model_name] = await createModel(model_name);
+            }
+            return models[model_name];
+        }
+    }
+}) ();
+
+module.exports.inferHandler = async (event, context) => {
     function toBase64FromImageData(data) {
         var canvas = createCanvas(256, 256);
         var context = canvas.getContext('2d');
@@ -55,8 +64,6 @@ module.exports.inferHandler = async (event, context) => {
             values[i * numChannels + channel] = pixels[i * 4 + channel]/255;
           }
         }
-      
-        console.log(values);
 
         return values
     };
@@ -81,7 +88,7 @@ module.exports.inferHandler = async (event, context) => {
     var imageData = toImageDataFromBase64(tile_fullstr);
     var input = imageToInput(imageData, 4);
     var model_name = extractModel(event);
-    const model = await tf.loadLayersModel(modelURL + model_name + '/model.json');
+    const model = await modelLoader.getModel(model_name);
     var prediction = model.predict(input);
     var clsftion = prediction.dataSync();
     var isFeature;
