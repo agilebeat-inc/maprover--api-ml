@@ -59,6 +59,20 @@ package:
 #    - exclude-me-dir/**
 
 functions:
+  api-describe:
+    handler: describe.inferHandler
+    events:
+      - http:
+          path: api/describe
+          method: get
+          cors: true
+          private: false
+          documentation:
+            summary: "Returns description of endpoints"
+            description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
+            tags:
+              - "Api"
+
   railway-rail:
     handler: infer.inferHandler
     events:
@@ -76,20 +90,6 @@ functions:
               - "Some other tag"
             requestModels:
               "application/json": "TileRequest"
-
-  api-describe:
-    handler: describe.inferHandler
-    events:
-      - http:
-          path: api/describe
-          method: get
-          cors: true
-          private: false
-          documentation:
-            summary: "Returns description of endpoints"
-            description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
-            tags:
-              - "Api"
 
   highway-motorway:
     handler: infer.inferHandler
