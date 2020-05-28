@@ -7,6 +7,7 @@ module.exports.inferHandler = async (event, context) => {
 
     const maprover_config = {
         'format-description': '{model-name, [command, domain name, deployment stage, rel_path]}}',
+        'railway-rail':  ['railway rail', domainName, stage, '/infer/railway-rail'],
         'highway-motorway':  ['highway motorway', domainName, stage, '/infer/highway-motorway'],
         'highway-trunk':  ['highway trunk', domainName, stage, '/infer/highway-trunk'],
         'highway-primary':  ['highway primary', domainName, stage, '/infer/highway-primary'],
