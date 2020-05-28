@@ -79,11 +79,11 @@ functions:
     package: 
       include:
         - models/**
+        - api-gateway-models/**
       exclude:
         - lib/**
         - node_modules/**
         - package-lock.json
-        - api-gateway-models/**
     handler: pyinfer.inferHandler
     events:
       - http:
