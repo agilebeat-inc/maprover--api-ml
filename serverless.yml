@@ -59,6 +59,23 @@ package:
 #    - exclude-me-dir/**
 
 functions:
+  railway-rail:
+    handler: infer.inferHandler
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/railway-rail
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - railroad"
+            description: "Classifies the tile and returns true if tile contains 'railroad' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
   highway-motorway:
     handler: infer.inferHandler
     events:
