@@ -22,7 +22,6 @@ service: maprover-infer-js
 
 provider:
   name: aws
-  runtime: nodejs12.x
   stage: prod
   region: us-east-1
 
@@ -48,19 +47,20 @@ provider:
 
 #you can add packaging information here
 package:
- include:
-   - models/**
-   - lib/**
-   - node_modules/**
-   - package-lock.json
-   - api-gateway-models/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
+  individually: true
 
 functions:
   api-describe:
+    runtime: nodejs12.x
     handler: describe.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           path: api/describe
@@ -72,9 +72,18 @@ functions:
             description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
             tags:
               - "Api"
-
+#Models 
   railway-rail:
+    runtime: python3.6
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -92,7 +101,16 @@ functions:
               "application/json": "TileRequest"
 
   highway-motorway:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -109,7 +127,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   highway-trunk:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -126,6 +153,15 @@ functions:
             requestModels:
               "application/json": "TileRequest"     
   highway-primary:
+    runtime: nodejs12.x
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     handler: infer.inferHandler
     events:
       - http:
@@ -143,7 +179,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"   
   highway-secondary:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -160,7 +205,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   aeroway-helipad:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -177,7 +231,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   amenity-hospital:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -194,7 +257,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   amenity-police:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -211,7 +283,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   amenity-firestation:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -228,7 +309,16 @@ functions:
             requestModels:
               "application/json": "TileRequest"
   landuse-quarry:
+    runtime: nodejs12.x
     handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
