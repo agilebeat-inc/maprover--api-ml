@@ -7,7 +7,7 @@ module.exports.inferHandler = async (event, context) => {
         'highway-primary':  ['highway-primary', '/infer/highway-primary'],
         'highway-secondary':  ['highway-secondary', '/infer/highway-secondary'],
         'aeroway-helipad':  ['aeroway-helipad', '/infer/aeroway-helipad'],
-        'amenity-hospital':  ['menity-hospital', '/infer/menity-hospital'],
+        'amenity-hospital':  ['amenity-hospital', '/infer/amenity-hospital'],
         'amenity-police':  ['amenity-police', '/infer/amenity-police'],
         'amenity-firestation':  ['amenity-firestation', '/infer/amenity-firestation'],
         'landuse-quarry':  ['landuse-quarry', '/infer/landuse-quarry']
