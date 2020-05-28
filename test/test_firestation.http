@@ -1,5 +1,5 @@
-###---- amenity-firestation 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+###--- amenity-firestation 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
 
 {
   "z":19,
@@ -10,8 +10,8 @@
 
 
 
-###---- amenity-firestation 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+###--- amenity-firestation 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 
 ###--- not amenity-firestation 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
 Content-Type: application/json
 
 {
@@ -36,8 +36,8 @@ Content-Type: application/json
 
 
 
-###---- not amenity-firestation 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
+###--- not amenity-firestation 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-firestation
 Content-Type: application/json
 
 {

@@ -1,5 +1,5 @@
-###---- highway-trunk 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+###--- highway-primary 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
 Content-Type: application/json
 
 {
@@ -11,8 +11,8 @@ Content-Type: application/json
 
 
 
-###---- highway-trunk 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+###--- highway-primary 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
 Content-Type: application/json
 
 {
@@ -24,8 +24,9 @@ Content-Type: application/json
 
 
 
-###--- not highway-trunk 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+###--- not highway-primary 1
+//POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+POST https://enfpeuifoj.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
 Content-Type: application/json
 
 {
@@ -37,8 +38,8 @@ Content-Type: application/json
 
 
 
-###---- not highway-trunk 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+###---- not highway-primary 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
 Content-Type: application/json
 
 {

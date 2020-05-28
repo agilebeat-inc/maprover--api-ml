@@ -1,5 +1,5 @@
-###---- amenity-police 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+###--- amenity-police 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
 Content-Type: application/json
 
 {
@@ -11,8 +11,8 @@ Content-Type: application/json
 
 
 
-###---- amenity-police 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+###--- amenity-police 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
 Content-Type: application/json
 
 {
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 
 ###--- not amenity-police 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
 Content-Type: application/json
 
 {
@@ -37,8 +37,8 @@ Content-Type: application/json
 
 
 
-###---- not amenity-police 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
+###--- not amenity-police 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/amenity-police
 Content-Type: application/json
 
 {

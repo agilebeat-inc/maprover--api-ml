@@ -1,5 +1,5 @@
-###---- motorway 1
-POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+###--- motorway 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
 Content-Type: application/json
 
 {
@@ -11,8 +11,8 @@ Content-Type: application/json
 
 
 
-###---- motorway 2
-POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+###--- motorway 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
 Content-Type: application/json
 
 {
@@ -24,8 +24,8 @@ Content-Type: application/json
 
 
 
-###---- not motorway 1
-POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+###--- not motorway 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
 Content-Type: application/json
 
 {
@@ -35,8 +35,8 @@ Content-Type: application/json
 }
 
 
-### not motorway 2
-POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
+###--- not motorway 2
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
 Content-Type: application/json
 
 {

@@ -1,5 +1,5 @@
-###---- landuse-quarry 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+###--- landuse-quarry 1
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 
 ###----landuse-quarry 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
 Content-Type: application/json
 
 {
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 
 ###--- not landuse-quarry 1
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
 
 
 ###---- not landuse-quarry 2
-/POST https://xxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
 Content-Type: application/json
 
 {
