@@ -4,11 +4,14 @@
   "version": "0.1.0",
   "dependencies": {
     "@tensorflow/tfjs": "^2.0.0",
-    "canvas": "^2.6.1"
+    "canvas": "^2.6.1",
+    "isstream": "^0.1.2"
   },
   "devDependencies": {
+    "serverless": "^1.71.3",
     "serverless-aws-documentation": "^1.1.0",
     "serverless-plugin-custom-roles": "^1.1.1",
+    "serverless-plugin-reducer": "^3.2.3",
     "serverless-python-requirements": "^5.1.0",
     "serverless-reqvalidator-plugin": "^1.0.3"
   }

@@ -72,6 +72,7 @@ functions:
             description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
             tags:
               - "Api"
+<<<<<<< Updated upstream
 #Models 
   railway-rail:
     runtime: python3.6
@@ -84,6 +85,7 @@ functions:
         - node_modules/**
         - package-lock.json
         - api-gateway-models/**
+<<<<<<< Updated upstream
     events:
       - http:
           reqValidatorName: 'tileInputValidator'
@@ -241,14 +243,17 @@ functions:
         - api-gateway-models/**
       exclude:
         - models/**
+=======
+    handler: pyinfer.inferHandler
+>>>>>>> Stashed changes
     events:
       - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/amenity-hospital
+          path: api/python
           method: post
           cors: true
           private: false
           documentation:
+<<<<<<< Updated upstream
             summary: "Classify a map tile that includes a map feature - hospital"
             description: "Classifies the tile and returns true if tile contains 'hospital' feature to a class or false if it does not."
             tags:
@@ -329,24 +334,12 @@ functions:
           documentation:
             summary: "Classify a map tile that includes a map feature - quarry"
             description: "Classifies the tile and returns true if tile contains 'quarry' feature to a class or false if it does not."
+=======
+            summary: "Returns description of endpoints"
+            description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
+>>>>>>> Stashed changes
             tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"     
-
-
-# you can add CloudFormation resource templates here
-resources:
-  Resources:
-    tileInputValidator:
-      Type: "AWS::ApiGateway::RequestValidator"
-      Properties:
-        Name: 'tileInputValidator'
-        RestApiId:
-          Ref: ApiGatewayRestApi
-        ValidateRequestBody: true
-        ValidateRequestParameters: false
+              - "Api"
 
 plugins:
   - serverless-reqvalidator-plugin
