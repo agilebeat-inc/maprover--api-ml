@@ -175,6 +175,18 @@ functions:
             tags:
               - "Api"
 
+# you can add CloudFormation resource templates here
+resources:
+  Resources:
+    tileInputValidator:
+      Type: "AWS::ApiGateway::RequestValidator"
+      Properties:
+        Name: 'tileInputValidator'
+        RestApiId:
+          Ref: ApiGatewayRestApi
+        ValidateRequestBody: true
+        ValidateRequestParameters: false
+
 plugins:
   - serverless-reqvalidator-plugin
   - serverless-aws-documentation
@@ -184,7 +196,7 @@ custom:
   documentation:
     api:
       info:
-        version: "v0.0.2"
+        version: "v0.0.3"
         title: "Maprover API"
         description: "Maprover API - Deep learning for a map"
     models:
