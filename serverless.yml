@@ -72,11 +72,10 @@ functions:
             description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
             tags:
               - "Api"
-<<<<<<< Updated upstream
+
 #Models 
   railway-rail:
     runtime: python3.6
-    handler: infer.inferHandler
     package: 
       include:
         - models/**
@@ -85,167 +84,7 @@ functions:
         - node_modules/**
         - package-lock.json
         - api-gateway-models/**
-<<<<<<< Updated upstream
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/railway-rail
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - railroad"
-            description: "Classifies the tile and returns true if tile contains 'railroad' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"
-
-  highway-motorway:
-    runtime: nodejs12.x
-    handler: infer.inferHandler
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/highway-motorway
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - motorway"
-            description: "Classifies the tile and returns true if tile contains 'motorway' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"
-  highway-trunk:
-    runtime: nodejs12.x
-    handler: infer.inferHandler
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/highway-trunk
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - trunk"
-            description: "Classifies the tile and returns true if tile contains 'trunk' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"     
-  highway-primary:
-    runtime: nodejs12.x
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-    handler: infer.inferHandler
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/highway-primary
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - primary"
-            description: "Classifies the tile and returns true if tile contains 'primary' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"   
-  highway-secondary:
-    runtime: nodejs12.x
-    handler: infer.inferHandler
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/highway-secondary
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - secondary"
-            description: "Classifies the tile and returns true if tile contains 'secondary' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"
-  aeroway-helipad:
-    runtime: nodejs12.x
-    handler: infer.inferHandler
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-    events:
-      - http:
-          reqValidatorName: 'tileInputValidator'
-          path: infer/aeroway-helipad
-          method: post
-          cors: true
-          private: false
-          documentation:
-            summary: "Classify a map tile that includes a map feature - helipad"
-            description: "Classifies the tile and returns true if tile contains 'helipad' feature to a class or false if it does not."
-            tags:
-              - "Data Creation"
-              - "Some other tag"
-            requestModels:
-              "application/json": "TileRequest"
-  amenity-hospital:
-    runtime: nodejs12.x
-    handler: infer.inferHandler
-    package: 
-      include:
-        - lib/**
-        - node_modules/**
-        - package-lock.json
-        - api-gateway-models/**
-      exclude:
-        - models/**
-=======
     handler: pyinfer.inferHandler
->>>>>>> Stashed changes
     events:
       - http:
           path: api/python
@@ -253,7 +92,6 @@ functions:
           cors: true
           private: false
           documentation:
-<<<<<<< Updated upstream
             summary: "Classify a map tile that includes a map feature - hospital"
             description: "Classifies the tile and returns true if tile contains 'hospital' feature to a class or false if it does not."
             tags:
@@ -334,10 +172,6 @@ functions:
           documentation:
             summary: "Classify a map tile that includes a map feature - quarry"
             description: "Classifies the tile and returns true if tile contains 'quarry' feature to a class or false if it does not."
-=======
-            summary: "Returns description of endpoints"
-            description: "Returns description of endpoints. Format: class-name: [name, relative endpoint]"
->>>>>>> Stashed changes
             tags:
               - "Api"
 
