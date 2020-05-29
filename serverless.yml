@@ -74,7 +74,7 @@ functions:
               - "Api"
 
 #Models 
-  railway-rail:
+  airway-runway:
     runtime: python3.6
     package: 
       include:
@@ -87,16 +87,15 @@ functions:
     handler: pyinfer.inferHandler
     events:
       - http:
-          path: api/python
+          path: api/airway-runway
           method: post
           cors: true
           private: false
           documentation:
-            summary: "Classify a map tile that includes a map feature - hospital"
-            description: "Classifies the tile and returns true if tile contains 'hospital' feature to a class or false if it does not."
+            summary: "Classify a map tile that includes a map feature - airway-runway"
+            description: "Classifies the tile and returns true if tile contains 'airway-runway' feature to a class or false if it does not."
             tags:
-              - "Data Creation"
-              - "Some other tag"
+              - "Color Model"
             requestModels:
               "application/json": "TileRequest"
   amenity-police:
