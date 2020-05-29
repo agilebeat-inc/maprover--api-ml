@@ -73,7 +73,7 @@ functions:
             tags:
               - "Api"
 
-#Models 
+#Models (Python)
   airway-runway:
     runtime: python3.6
     package: 
@@ -96,6 +96,163 @@ functions:
             description: "Classifies the tile and returns true if tile contains 'airway-runway' feature to a class or false if it does not."
             tags:
               - "Color Model"
+            requestModels:
+              "application/json": "TileRequest"
+#Models (JavaScript)
+  highway-motorway:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/highway-motorway
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - motorway"
+            description: "Classifies the tile and returns true if tile contains 'motorway' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
+  highway-trunk:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/highway-trunk
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - trunk"
+            description: "Classifies the tile and returns true if tile contains 'trunk' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"     
+  highway-primary:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/highway-primary
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - primary"
+            description: "Classifies the tile and returns true if tile contains 'primary' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"   
+  highway-secondary:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/highway-secondary
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - secondary"
+            description: "Classifies the tile and returns true if tile contains 'secondary' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
+  aeroway-helipad:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/aeroway-helipad
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - helipad"
+            description: "Classifies the tile and returns true if tile contains 'helipad' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"
+  amenity-hospital:
+    runtime: nodejs12.x
+    handler: infer.inferHandler
+    package: 
+      include:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+        - api-gateway-models/**
+      exclude:
+        - models/**
+    events:
+      - http:
+          reqValidatorName: 'tileInputValidator'
+          path: infer/amenity-hospital
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - hospital"
+            description: "Classifies the tile and returns true if tile contains 'hospital' feature to a class or false if it does not."
+            tags:
+              - "Data Creation"
+              - "Some other tag"
             requestModels:
               "application/json": "TileRequest"
   amenity-police:
@@ -172,7 +329,10 @@ functions:
             summary: "Classify a map tile that includes a map feature - quarry"
             description: "Classifies the tile and returns true if tile contains 'quarry' feature to a class or false if it does not."
             tags:
-              - "Api"
+              - "Data Creation"
+              - "Some other tag"
+            requestModels:
+              "application/json": "TileRequest"  
 
 # you can add CloudFormation resource templates here
 resources:
