@@ -1,5 +1,5 @@
 ###--- highway-secondary 1
-POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-secondary
+POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/infer/highway-secondary
 Content-Type: application/json
 
 {
