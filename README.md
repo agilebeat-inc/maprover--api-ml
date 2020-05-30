@@ -4,17 +4,22 @@ Expose models with a lambda function through API Gateway
 
 ##To deploy:
 
-1. Install serverless plugins:
-```
-serverless plugin install -n serverless-python-requirements
-serverless plugin install -n serverless-reqvalidator-plugin
-serverless plugin install -n serverless-aws-documentation
-serverless plugin install -n serverless-plugin-custom-roles
-```
-
 2. Install node tensorflow module:
 ```
 npm install @tensorflow/tfjs
+```
+
+3. Optimize distribution:
+```
+npm prune --production
+```
+
+1. Install serverless plugins for development:
+```
+serverless plugin install -n serverless-python-requirements --save-dev
+serverless plugin install -n serverless-reqvalidator-plugin --save-dev
+serverless plugin install -n serverless-aws-documentation --save-dev
+serverless plugin install -n serverless-plugin-custom-roles --save-dev
 ```
 
 4. Set up aws credentials
@@ -40,13 +45,13 @@ npm install @tensorflow/tfjs
     POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/landuse-quarry
     ```
 
-3. Useful serverless comands in the project 
+7. Useful serverless comands in the project 
     - deploy project to the aws: ```sls deploy -v```
     - run local test: ```sls invoke local -f infer```
     - run test with post file ```sls invoke -f infer -p test/tile_test.json```
     - pull out logs for the lambda function ```sls logs -f infer```
 
-4. Sources:
+8. Sources:
     - [aws nodejs canva](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
     - [node-canva](https://github.com/Automattic/node-canvas)
     - [problems with lambda so libs](https://github.com/Automattic/node-canvas/issues/680)
@@ -59,7 +64,7 @@ npm install @tensorflow/tfjs
     - [convert model to tsjs](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
     - [save Keras model as tsjs model](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
 
-5. Lambda Tricks:
+9. Lambda Tricks:
     - list files on the running machine
 ```
 const fs = require('fs');
@@ -69,7 +74,7 @@ exports.handler = async (event, context) => {
 };
 ```
 
-6. Issues
+10. Issues
 
 NPM is very aggressive. Sometimes it innstalls dependencies in the node_modules folder.
 When that happens the lambda package is too big to run (~80MB). When that happens remove
