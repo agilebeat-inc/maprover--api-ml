@@ -69,5 +69,13 @@ exports.handler = async (event, context) => {
 };
 ```
 
+6. Issues
 
+NPM is very aggressive. Sometimes it innstalls dependencies in the node_modules folder.
+When that happens the lambda package is too big to run (~80MB). When that happens remove
+node_modules, package-lock.json and package.json files and check them out again from the 
+repo. After that reinstall tensorflowjs with command:
+```
+npm install @tensorflow/tfjs
+```
 
