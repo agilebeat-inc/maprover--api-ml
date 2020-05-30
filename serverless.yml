@@ -56,8 +56,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+ #       - node_modules/**
+ #       - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -84,7 +84,7 @@ functions:
         - lib/**
         - node_modules/**
         - package-lock.json
-    handler: pyinfer.inferHandler
+    handler: pyinfer_runway.inferHandler
     events:
       - http:
           path: api/airway-runway
@@ -98,6 +98,82 @@ functions:
               - "Color Model"
             requestModels:
               "application/json": "TileRequest"
+
+  landuse-construction:
+    runtime: python3.6
+    package: 
+      include:
+        - models/**
+        - api-gateway-models/**
+      exclude:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+    handler: pyinfer_construction.inferHandler
+    events:
+      - http:
+          path: api/landuse-construction
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - landuse-construction"
+            description: "Classifies the tile and returns true if tile contains 'landuse-construction' feature to a class or false if it does not."
+            tags:
+              - "Color Model"
+            requestModels:
+              "application/json": "TileRequest"
+
+  landuse-commercial:
+    runtime: python3.6
+    package: 
+      include:
+        - models/**
+        - api-gateway-models/**
+      exclude:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+    handler: pyinfer_commercial.inferHandler
+    events:
+      - http:
+          path: api/landuse-commercial
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - landuse-commercial"
+            description: "Classifies the tile and returns true if tile contains 'landuse-commercial' feature to a class or false if it does not."
+            tags:
+              - "Color Model"
+            requestModels:
+              "application/json": "TileRequest"
+
+  landuse-industrial:
+    runtime: python3.6
+    package: 
+      include:
+        - models/**
+        - api-gateway-models/**
+      exclude:
+        - lib/**
+        - node_modules/**
+        - package-lock.json
+    handler: pyinfer_industrial.inferHandler
+    events:
+      - http:
+          path: api/landuse-industrial
+          method: post
+          cors: true
+          private: false
+          documentation:
+            summary: "Classify a map tile that includes a map feature - landuse-industrial"
+            description: "Classifies the tile and returns true if tile contains 'landuse-industrial' feature to a class or false if it does not."
+            tags:
+              - "Color Model"
+            requestModels:
+              "application/json": "TileRequest"
+
 #Models (JavaScript)
   railway-rail:
     runtime: nodejs12.x
@@ -105,8 +181,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+  #      - node_modules/**
+   #     - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -131,8 +207,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+    #    - node_modules/**
+    #    - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -157,8 +233,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+   #     - node_modules/**
+   #     - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -183,8 +259,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+    #    - node_modules/**
+     #   - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -209,8 +285,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+  #      - node_modules/**
+  #      - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -235,8 +311,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+   #     - node_modules/**
+   #     - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -261,8 +337,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+  #      - node_modules/**
+  #      - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -287,8 +363,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+  #      - node_modules/**
+  #      - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -313,8 +389,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+  #      - node_modules/**
+  #      - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
@@ -339,8 +415,8 @@ functions:
     package: 
       include:
         - lib/**
-        - node_modules/**
-        - package-lock.json
+#        - node_modules/**
+ #       - package-lock.json
         - api-gateway-models/**
       exclude:
         - models/**
