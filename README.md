@@ -1,21 +1,26 @@
 # maprover--api-tsjs-infer
+
 Expose models with a lambda function through API Gateway
 
+## To deploy:
 
-##To deploy:
+These commands should be run in the container shell
 
 2. Install node tensorflow module:
-```
+
+```bash
 npm install @tensorflow/tfjs
 ```
 
 3. Optimize distribution:
-```
+
+```bash
 npm prune --production
 ```
 
 1. Install serverless plugins for development:
-```
+
+```bash
 serverless plugin install -n serverless-python-requirements --save-dev
 serverless plugin install -n serverless-reqvalidator-plugin --save-dev
 serverless plugin install -n serverless-aws-documentation --save-dev
@@ -23,15 +28,19 @@ serverless plugin install -n serverless-plugin-custom-roles --save-dev
 ```
 
 4. Set up aws credentials
-    - run command: ```aws configure```
+
+    - run command: `aws configure`
 
 5. Check your aws configuration by: 
-    - listing s3 buckets: ```aws s3 ls```
+
+    - listing s3 buckets: `aws s3 ls`
     - you should see a list of all your buckets
 
 6. Run:
-    - serverless deploy command: ```sls deploy -v```
+
+    - serverless deploy command: `sls deploy -v`
     - you should see list of endpoints: 
+    
     ```
     endpoints:
     POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-motorway
@@ -46,14 +55,16 @@ serverless plugin install -n serverless-plugin-custom-roles --save-dev
     ```
 
 7. Useful serverless comands in the project 
-    - deploy project to the aws: ```sls deploy -v```
-    - run local test: ```sls invoke local -f infer```
-    - run test with post file ```sls invoke -f infer -p test/tile_test.json```
-    - pull out logs for the lambda function ```sls logs -f infer```
+
+    - deploy project to the aws: `sls deploy -v`
+    - run local test: `sls invoke local -f infer`
+    - run test with post file `sls invoke -f infer -p test/tile_test.json`
+    - pull out logs for the lambda function `sls logs -f infer`
 
 8. Sources:
-    - [aws nodejs canva](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
-    - [node-canva](https://github.com/Automattic/node-canvas)
+
+    - [aws nodejs canvas](https://github.com/Automattic/node-canvas/wiki/Installation:-AWS-Lambda)
+    - [node-canvas](https://github.com/Automattic/node-canvas)
     - [problems with lambda so libs](https://github.com/Automattic/node-canvas/issues/680)
     - [build aws lambda issues](https://github.com/Automattic/node-canvas/issues/680)
     - [load image example](https://medium.com/@nico.axtmann95/scalable-image-classification-with-onnx-js-and-aws-lambda-ab3d7bd1723)
@@ -66,7 +77,8 @@ serverless plugin install -n serverless-plugin-custom-roles --save-dev
 
 9. Lambda Tricks:
     - list files on the running machine
-```
+    
+```javascript
 const fs = require('fs');
 
 exports.handler = async (event, context) => {
@@ -80,7 +92,8 @@ NPM is very aggressive. Sometimes it innstalls dependencies in the node_modules 
 When that happens the lambda package is too big to run (~80MB). When that happens remove
 node_modules, package-lock.json and package.json files and check them out again from the 
 repo. After that reinstall tensorflowjs with command:
-```
+
+```bash
 npm install @tensorflow/tfjs
 ```
 
