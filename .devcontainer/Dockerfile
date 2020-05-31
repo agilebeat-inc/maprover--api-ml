@@ -1,40 +1,41 @@
 FROM python:3.6
-LABEL maintainer “Shiho ASA<asashiho@mail.asa.yokohama>”
+LABEL maintainer "Shiho ASA<asashiho@mail.asa.yokohama>"
+
+# definitely the most annoying part is getting credentials
+COPY ./credentials /opt/aws
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     apt-utils \
-    libblas-dev \
-    liblapack-dev\
-    libatlas-base-dev \
-    mecab \
-    mecab-naist-jdic \
-    mecab-ipadic-utf8 \
-    swig \
-    libmecab-dev \
-    gfortran \
+    # libblas-dev \
+    # liblapack-dev\
+    # libatlas-base-dev \
+    # mecab \
+    # mecab-naist-jdic \
+    # mecab-ipadic-utf8 \
+    # swig \
+    # libmecab-dev \
+    # gfortran \
 #    libav-tools \
     python3-setuptools \
     sudo \
     curl \
     vim \
-    mc \
     build-essential \
-    libcairo2-dev \
-    libpango1.0-dev \
-    libjpeg-dev \
-    libgif-dev \
-    librsvg2-dev
+    # mc \
+    # libcairo2-dev \
+    # libpango1.0-dev \
+    # libjpeg-dev \
+    # libgif-dev \
+    # librsvg2-dev
 
 
-RUN pip install numpy --upgrade
-RUN pip install pyinquirer --upgrade
-RUN pip --no-cache-dir install tensorflowjs
+# RUN pip install pyinquirer --upgrade
+RUN pip install --upgrade numpy
+RUN pip --no-cache-dir install awscli opencv-python Pillow tensorflowjs
 
-# RUN pip --no-cache-dir install \
-# awscli boto3
-RUN pip --no-cache-dir install awscli
-
+# Using Ubuntu
+# RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -; apt-get install -y nodejs
 # https://deb.nodesource.com/setup_12.x is a bash script that prepares for installing NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
@@ -46,8 +47,6 @@ RUN npm install -g npm@latest
 # RUN apt-get clean && \
 #     rm -rf /var/lib/apt/lists/*
 
-# Using Ubuntu
-# RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -; apt-get install -y nodejs
 
 
 # Install Python library for Data Science
@@ -78,11 +77,13 @@ RUN npm install -g npm@latest
 #COPY notebooks /notebooks
 
 # Port
-EXPOSE 8888
-EXPOSE 6006 
+# EXPOSE 8888
+# EXPOSE 6006 
 
-VOLUME /notebooks
+# VOLUME /notebooks
 
 # Run Jupyter Notebook
 # WORKDIR "/notebooks"
 # CMD ["jupyter","notebook", "--allow-root"]
+# make shell the default command rather than a Python REPL
+CMD ["/bin/bash"]
