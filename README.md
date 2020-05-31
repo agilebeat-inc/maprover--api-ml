@@ -73,6 +73,7 @@ serverless plugin install -n serverless-plugin-custom-roles --save-dev
     - [convert model to tsjs](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
     - [save Keras model as tsjs model](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
     - [serverless API Gatewas custom domain + GraphQL](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/)
+    - [serverless custom domain for api gateway - serverless-domain-manager](https://www.serverless.com/plugins/serverless-domain-manager/)
 
 9. Lambda Tricks:
     - list files on the running machine
