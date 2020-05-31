@@ -4,17 +4,17 @@ Expose models with a lambda function through API Gateway
 
 ##To deploy:
 
-2. Install node tensorflow module:
+1. Install node tensorflow module:
 ```
 npm install @tensorflow/tfjs
 ```
 
-3. Optimize distribution:
+2. Optimize distribution:
 ```
 npm prune --production
 ```
 
-1. Install serverless plugins for development:
+3. Install serverless plugins for development:
 ```
 serverless plugin install -n serverless-python-requirements --save-dev
 serverless plugin install -n serverless-reqvalidator-plugin --save-dev
