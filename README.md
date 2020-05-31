@@ -12,17 +12,20 @@ npm install @tensorflow/tfjs
 ```
 
 2. Optimize distribution:
+
 ```
 npm prune --production
 ```
 
 3. Install serverless plugins for development:
-```
 
+```
 serverless plugin install -n serverless-python-requirements --save-dev
 serverless plugin install -n serverless-reqvalidator-plugin --save-dev
 serverless plugin install -n serverless-aws-documentation --save-dev
 serverless plugin install -n serverless-plugin-custom-roles --save-dev
+serverless plugin install -n serverless-aws-documentation --save-dev
+serverless plugin install -n serverless-domain-manager --save-dev
 ```
 
 4. Set up aws credentials

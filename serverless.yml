@@ -489,7 +489,7 @@ custom:
     endpointType: 'edge'
     securityPolicy: 'tls_1_2'
     apiType: 'rest'
-    enabled: true
+    enabled: false
   documentation:
     api:
       info:
