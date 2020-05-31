@@ -11,7 +11,35 @@ module.exports.inferHandler = async (event, context) => {
             "model-label": "Runway",
             "domain": domainName,
             "stage": stage,
-            "api_path": "/infer/airway-runway"
+            "api_path": "/api/airway-runway"
+        },
+        'landuse-commercial':  {
+            "model-name": "landuse-commercial",
+            "model-label": "Commercial",
+            "domain": domainName,
+            "stage": stage,
+            "api_path": "/api/landuse-commercial"
+        },
+        'landuse-construction':  {
+            "model-name": "landuse-construction",
+            "model-label": "Construction",
+            "domain": domainName,
+            "stage": stage,
+            "api_path": "/api/landuse-construction"
+        },
+        'landuse-industrial':  {
+            "model-name": "landuse-industrial",
+            "model-label": "Industrial",
+            "domain": domainName,
+            "stage": stage,
+            "api_path": "/api/landuse-industrial"
+        },
+        'landuse-military':  {
+            "model-name": "landuse-military",
+            "model-label": "Military",
+            "domain": domainName,
+            "stage": stage,
+            "api_path": "/api/landuse-military"
         },
         'railway-rail':  {
             "model-name": "railway rail",

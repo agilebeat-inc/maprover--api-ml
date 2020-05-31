@@ -82,7 +82,7 @@ def inferHandler(event, context):
     response = {
         "statusCode": 200,
         "headers": {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-        "body": json.dumps({'airway-runway': dic})
+        "body": json.dumps({'landuse-commercial': dic})
     }
     
     return response
