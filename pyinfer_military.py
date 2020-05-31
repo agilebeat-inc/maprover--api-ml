@@ -28,7 +28,7 @@ def decode_base64_to_cv2(img_b64):
 
 
 #--- Classify
-templates = './template/'
+templates = 'models/template/'
 
 def classify_template_match(templates, img_cv2, threshold=0.9):
     prediction = 1
