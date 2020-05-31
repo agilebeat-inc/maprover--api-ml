@@ -63,6 +63,7 @@ serverless plugin install -n serverless-plugin-custom-roles --save-dev
     - [encoding and decoding b64 in Node.js](https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/)
     - [convert model to tsjs](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
     - [save Keras model as tsjs model](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
+    - [serverless API Gatewas custom domain + GraphQL](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/)
 
 9. Lambda Tricks:
     - list files on the running machine
