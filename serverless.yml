@@ -478,7 +478,18 @@ plugins:
   - serverless-aws-documentation
   - serverless-plugin-custom-roles
   - serverless-python-requirements
+  - serverless-domain-manager
 custom:
+  customDomain:
+    domainName: 'ml.api.maprover.io'
+    stage: ${self:provider.stage}
+    basePath: ''
+    certificateName: '*.foo.com'
+    createRoute53Record: false
+    endpointType: 'edge'
+    securityPolicy: 'tls_1_2'
+    apiType: 'rest'
+    enabled: true
   documentation:
     api:
       info:
