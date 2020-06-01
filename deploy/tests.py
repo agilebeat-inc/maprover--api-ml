@@ -43,7 +43,7 @@ def test_endpoint(test,unmask = None):
     For masked tests, insert the value of 'unmask' to replace the 'xxxxxxx'
     """
     def unmask_endpoint(url,x):
-        return re.sub(r'(https?://)[a-z]+\.',f'\\1{x}.',url)
+        return re.sub(r'(https?://)\w+\.',f'\\1{x}.',url)
     reqURL = test['URI']
     if unmask:
         reqURL = unmask_endpoint(reqURL,unmask)
@@ -74,7 +74,7 @@ def run_all_tests(unmask):
     results = {}
     for test in all_tests.keys():
         print(f"\n\nTesting {test} endpoint...")
-        results[test] = [test_endpoint(req) for req in all_tests[test]]
+        results[test] = [test_endpoint(req,unmask) for req in all_tests[test]]
     return results
 
 if __name__ == '__main__':
@@ -82,7 +82,8 @@ if __name__ == '__main__':
     argv = sys.argv
     unmask = None
     if len(argv) > 1:
-        unmask = argv[2]
+        unmask = argv[1]
+        print(f"Using invoke URL '{unmask}''")
     run_all_tests(unmask)
     
 
