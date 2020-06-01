@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     curl \
     vim \
-    build-essential \
+    build-essential
     # mc \
     # libcairo2-dev \
     # libpango1.0-dev \
