@@ -1,5 +1,5 @@
 ###--- landuse-construction 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 
 ###--- landuse-construction 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
 
 {
   "z":19,
@@ -24,7 +24,7 @@ POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-con
 
 
 ###--- not landuse-construction 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
 
 {
   "z":19,
@@ -36,7 +36,7 @@ POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-con
 
 
 ###--- not landuse-construction 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-construction
 Content-Type: application/json
 
 {

@@ -1,5 +1,5 @@
 ###--- landuse-commercial 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
 
 {
   "z":19,
@@ -10,7 +10,7 @@ POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-com
 
 
 ###--- landuse-commercial 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 
 ###--- not landuse-commercial 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 
 ###--- not landuse-commercial 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-commercial
 Content-Type: application/json
 
 {

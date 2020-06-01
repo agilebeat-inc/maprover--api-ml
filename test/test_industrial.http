@@ -1,5 +1,5 @@
 ###--- landuse-industrial 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
 
 {
   "z":19,
@@ -11,7 +11,7 @@ POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-ind
 
 
 ###--- landuse-industrial 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 
 ###--- not landuse-industrial 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 
 ###--- not landuse-industrial 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/landuse-industrial
 Content-Type: application/json
 
 {

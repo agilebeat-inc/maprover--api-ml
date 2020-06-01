@@ -25,8 +25,7 @@ Content-Type: application/json
 
 
 ###--- not highway-primary 1
-//POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
-POST https://enfpeuifoj.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/infer/highway-primary
 Content-Type: application/json
 
 {

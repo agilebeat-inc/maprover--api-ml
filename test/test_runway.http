@@ -1,5 +1,5 @@
 ###--- aeroway-runway 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
 
 {
   "z":19,
@@ -11,7 +11,7 @@ POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/airway-runw
 
 
 ###--- aeroway-runway 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 
 ###--- not aeroway-runway 1
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 
 ###--- not aeroway-runway 2
-POST https://430huoyzz9.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
+POST https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/api/airway-runway
 Content-Type: application/json
 
 {
