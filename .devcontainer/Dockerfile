@@ -1,8 +1,5 @@
 FROM python:3.6
-LABEL maintainer "Shiho ASA<asashiho@mail.asa.yokohama>"
-
-# definitely the most annoying part is getting credentials
-COPY ./credentials /opt/aws
+LABEL maintainer "Agilebeat"
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -16,26 +13,24 @@ RUN apt-get update && apt-get install -y \
     # swig \
     # libmecab-dev \
     # gfortran \
-#    libav-tools \
+    #libav-tools \
     python3-setuptools \
     sudo \
     curl \
     vim \
-    build-essential
-    # mc \
-    # libcairo2-dev \
-    # libpango1.0-dev \
-    # libjpeg-dev \
-    # libgif-dev \
-    # librsvg2-dev
+    build-essential \
+    mc \
+    libcairo2-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libgif-dev \
+    librsvg2-dev
 
 
 # RUN pip install pyinquirer --upgrade
 RUN pip install --upgrade numpy
 RUN pip --no-cache-dir install awscli opencv-python Pillow tensorflowjs
 
-# Using Ubuntu
-# RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -; apt-get install -y nodejs
 # https://deb.nodesource.com/setup_12.x is a bash script that prepares for installing NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
@@ -86,4 +81,4 @@ RUN npm install -g npm@latest
 # WORKDIR "/notebooks"
 # CMD ["jupyter","notebook", "--allow-root"]
 # make shell the default command rather than a Python REPL
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
