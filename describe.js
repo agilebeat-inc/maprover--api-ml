@@ -8,105 +8,105 @@ module.exports.inferHandler = async (event, context) => {
     const maprover_config = {
         'airway-runway':  {
             "model-name": "airway runway",
-            "model-label": "Airway - Runway",
+            "model-label": "airway runway",
             "domain": domainName,
             "stage": stage,
             "api_path": "/api/airway-runway"
         },
         'landuse-commercial':  {
             "model-name": "landuse-commercial",
-            "model-label": "Commercial zoning",
+            "model-label": "landuse commercial",
             "domain": domainName,
             "stage": stage,
             "api_path": "/api/landuse-commercial"
         },
         'landuse-construction':  {
             "model-name": "landuse-construction",
-            "model-label": "Construction",
+            "model-label": "landuse construction",
             "domain": domainName,
             "stage": stage,
             "api_path": "/api/landuse-construction"
         },
         'landuse-industrial':  {
             "model-name": "landuse-industrial",
-            "model-label": "Industrial zoning",
+            "model-label": "landuse industrial",
             "domain": domainName,
             "stage": stage,
             "api_path": "/api/landuse-industrial"
         },
         'landuse-military':  {
             "model-name": "landuse-military",
-            "model-label": "Military land use",
+            "model-label": "landuse military",
             "domain": domainName,
             "stage": stage,
             "api_path": "/api/landuse-military"
         },
         'railway-rail':  {
             "model-name": "railway rail",
-            "model-label": "Railroads/railways",
+            "model-label": "railway rail",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/railway-rail"
         },
         'highway-motorway':  {
             "model-name": "highway motorway",
-            "model-label": "Highway, motorway",
+            "model-label": "highway motorway",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/highway-motorway"
         },
         'highway-trunk':  {
             "model-name": "highway trunk",
-            "model-label": "Highway, trunk",
+            "model-label": "highway trunk",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/highway-trunk"
         },
         'highway-primary':  {
             "model-name": "highway primary",
-            "model-label": "Highway, primary",
+            "model-label": "highway primary",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/highway-primary"
         },
         'highway-secondary':  {
             "model-name": "highway secondary",
-            "model-label": "Highway, secondary",
+            "model-label": "highway secondary",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/highway-secondary"
         },
         'aeroway-helipad':  {
             "model-name": "aeroway helipad",
-            "model-label": "Helipads",
+            "model-label": "aeroway helipad",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/aeroway-helipad"
         },
         'amenity-hospital':  {
             "model-name": "amenity hospital",
-            "model-label": "Hospitals",
+            "model-label": "amenity hospital",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/amenity-hospital"
         },
         'amenity-police':  {
             "model-name": "amenity police",
-            "model-label": "Police stations",
+            "model-label": "amenity police",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/amenity-police"
         },
         'amenity-firestation':  {
             "model-name": "amenity firestation",
-            "model-label": "Fire stations",
+            "model-label": "amenity firestation",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/amenity-firestation"
         },
         'landuse-quarry': {
             "model-name": "landuse quarry",
-            "model-label": "Quarries",
+            "model-label": "landuse quarry",
             "domain": domainName,
             "stage": stage,
             "api_path": "/infer/landuse-quarry"
