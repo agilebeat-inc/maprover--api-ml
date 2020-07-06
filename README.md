@@ -1,4 +1,4 @@
-# maprover--api-tsjs-infer
+# maprover--api-ml
 
 Expose models with a lambda function through API Gateway
 
