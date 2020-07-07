@@ -24,6 +24,8 @@ provider:
   name: aws
   stage: prod
   region: us-east-1
+  deploymentBucket:
+    name: serverless.maprover.deployment
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -484,12 +486,12 @@ custom:
     domainName: 'ml.api.maprover.io'
     stage: ${self:provider.stage}
     basePath: ''
-    certificateName: '*.foo.com'
-    createRoute53Record: false
+    certificateName: '*.api.maprover.io'
+    createRoute53Record: true
     endpointType: 'edge'
     securityPolicy: 'tls_1_2'
     apiType: 'rest'
-    enabled: false
+    enabled: true
   documentation:
     api:
       info:
