@@ -89,7 +89,7 @@ functions:
     handler: pyinfer_runway.inferHandler
     events:
       - http:
-          path: api/airway-runway
+          path: infer/airway-runway
           method: post
           cors: true
           private: false
@@ -114,7 +114,7 @@ functions:
     handler: pyinfer_construction.inferHandler
     events:
       - http:
-          path: api/landuse-construction
+          path: infer/landuse-construction
           method: post
           cors: true
           private: false
@@ -139,7 +139,7 @@ functions:
     handler: pyinfer_commercial.inferHandler
     events:
       - http:
-          path: api/landuse-commercial
+          path: infer/landuse-commercial
           method: post
           cors: true
           private: false
@@ -164,7 +164,7 @@ functions:
     handler: pyinfer_industrial.inferHandler
     events:
       - http:
-          path: api/landuse-industrial
+          path: infer/landuse-industrial
           method: post
           cors: true
           private: false
@@ -189,7 +189,7 @@ functions:
     handler: pyinfer_military.inferHandler
     events:
       - http:
-          path: api/landuse-military
+          path: infer/landuse-military
           method: post
           cors: true
           private: false
@@ -485,7 +485,7 @@ custom:
   customDomain:
     domainName: 'ml.api.maprover.io'
     stage: ${self:provider.stage}
-    #basePath: ''
+    basePath: ${self:provider.stage}
     certificateName: '*.api.maprover.io'
     createRoute53Record: true
     endpointType: 'edge'
