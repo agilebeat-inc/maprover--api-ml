@@ -38,7 +38,7 @@ serverless plugin install -n serverless-domain-manager --save-dev
     - you should see a list of all your buckets
 
 6. Run:
-
+    - serverless create domain: `sls create_domain`
     - serverless deploy command: `sls deploy -v`
     - you should see list of endpoints: 
     
