@@ -485,7 +485,7 @@ custom:
   customDomain:
     domainName: 'ml.api.maprover.io'
     stage: ${self:provider.stage}
-    basePath: ''
+    #basePath: ''
     certificateName: '*.api.maprover.io'
     createRoute53Record: true
     endpointType: 'edge'
