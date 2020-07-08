@@ -79,7 +79,8 @@ module.exports.inferHandler = async (event, context) => {
 
     function extractModel(event) {
         var urlPath = event.path;
-        var model_name = urlPath.split("/")[2];
+        var urlAsList = urlPath.split("/");
+        var model_name = urlAsList[urlAsList.length - 1];
         return model_name;
     }
 
